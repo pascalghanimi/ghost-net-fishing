@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+/* Grundlegende Einstellungen */
+body {
+  background: black;
+  font-family: Arial, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+  margin-top: 30px;
+  margin-left: 30px;
+  display: flex;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.nav-link-selected {
+  color: #FFD700; /* Gelb für aktive Seite */
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #ebebeb;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #FFD700;
+}
+
+/* Hauptcontainer */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+/* Überschriften */
+.heading {
+  color: #FFD700;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.subheading {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Tabellen-Styling */
+.table-container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.ghostnet-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+}
+
+.ghostnet-table thead {
+  background-color: #222;
+}
+
+.ghostnet-table th,
+.ghostnet-table td {
+  padding: 12px 15px;
+  border: 1px solid #444;
+  text-align: center;
+}
+
+/* Formular Container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Formular-Box */
+.form-box {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(255, 215, 0, 0.2);
+}
+
+/* Formular-Eingabefelder */
+.form-input {
+  background-color: #333;
+  color: white;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #FFD700;
+  background-color: #444;
+}
+
+/* Buttons */
+.action-button {
+  background-color: #FFD700;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.action-button:hover {
+  background-color: #e6c200;
+}

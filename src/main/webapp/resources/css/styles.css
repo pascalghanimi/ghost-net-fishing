@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+body {
+  background: black;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  margin-top: 30px;
+  margin-left: 30px;
+  display: flex;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.nav-link-selected {
+  color: #FFD700; /* Gelb wie bei der Melden-Seite */
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #ebebeb;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #FFD700; /* Gelb beim Hover für Konsistenz */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 90%;
+  margin: auto;
+}
+
+.home-section {
+  flex: 1;
+  color: white;
+}
+
+.left-section {
+  padding-right: 20px;
+}
+
+.right-section {
+  padding-left: 20px;
+}
+
+.center-section {
+  flex: 0 0 30%;
+  text-align: center;
+}
+
+.ghost-img {
+  width: 100%;
+  height: auto;
+}
+
+.heading {
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.subheading {
+  color: white;
+}
+
+.text {
+  color: white;
+  line-height: 1.6;
+}
+
+.facts-list {
+  list-style-type: disc;
+  color: white;
+  margin-left: 20px;
+}
+
+.motivational {
+  color: #00FFAA;
+  font-style: italic;
+  margin-top: 20px;
+}

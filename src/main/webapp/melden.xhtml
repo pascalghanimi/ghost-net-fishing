@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="jakarta.faces.core">
+<h:head>
+  <title>Geisternetz melden</title>
+  <h:outputStylesheet name="css/melden.css" />
+</h:head>
+<h:body>
+
+  <!-- Navbar -->
+  <div class="nav-container">
+    <h:outputLink value="index.xhtml" styleClass="nav-link">Home</h:outputLink>
+    <h:outputLink value="bergen.xhtml" styleClass="nav-link">Bergen</h:outputLink>
+    <h:outputLink value="melden.xhtml" styleClass="nav-active">Melden</h:outputLink>
+    <h:outputLink value="geisternetze.xhtml" styleClass="nav-link">Alle Geisternetze</h:outputLink>
+  </div>
+
+  <!-- Hauptcontainer -->
+  <div class="main-container">
+    <h1 class="page-title">Geisternetz melden</h1>
+
+    <h:form class="form-box">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <h:inputText id="name" value="#{geisternetzBean.geisternetz.meldendeName}" required="true" class="form-field"/>
+      </div>
+
+      <div class="form-group">
+        <label for="telefon">Telefonnummer (Optional):</label>
+        <h:inputText id="telefon" value="#{geisternetzBean.geisternetz.meldendeTelefon}" class="form-field"/>
+      </div>
+
+      <div class="form-group">
+        <label for="latitude">Breitengrad:</label>
+        <h:inputText id="latitude" value="#{geisternetzBean.geisternetz.breitengrad}" required="true" class="form-field">
+          <f:validateDoubleRange minimum="-90.0" maximum="90.0"/>
+        </h:inputText>
+      </div>
+
+      <div class="form-group">
+        <label for="longitude">Längengrad:</label>
+        <h:inputText id="longitude" value="#{geisternetzBean.geisternetz.laengengrad}" required="true" class="form-field">
+          <f:validateDoubleRange minimum="-180.0" maximum="180.0"/>
+        </h:inputText>
+      </div>
+
+      <div class="form-group">
+        <label for="groesse">Größe des Netzes (m):</label>
+        <h:inputText id="groesse" value="#{geisternetzBean.geisternetz.groesse}" required="true" class="form-field">
+          <f:validateDoubleRange minimum="0.1"/>
+        </h:inputText>
+      </div>
+
+      <div class="form-group">
+        <label for="beschreibung">Beschreibung:</label>
+        <h:inputTextarea id="beschreibung" value="#{geisternetzBean.geisternetz.beschreibung}" required="true" class="form-field"/>
+      </div>
+
+      <h:commandButton value="Melden" action="#{geisternetzBean.speichern}" class="submit-btn"/>
+    </h:form>
+  </div>
+
+</h:body>
+</html>

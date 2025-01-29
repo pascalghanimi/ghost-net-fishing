@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Bergen</title>
+    <h:outputStylesheet name="css/bergen.css" />
+</h:head>
+<h:body>
+    <h:panelGroup layout="block" styleClass="navbar">
+        <h:outputLink value="index.xhtml" styleClass="nav-link">Home</h:outputLink>
+        <h:outputLink value="bergen.xhtml" styleClass="nav-link-selected">Bergen</h:outputLink>
+        <h:outputLink value="melden.xhtml" styleClass="nav-link">Melden</h:outputLink>
+        <h:outputLink value="geisternetze.xhtml" styleClass="nav-link">Alle Geisternetze</h:outputLink>
+    </h:panelGroup>
+
+    <div class="container">
+        <h1 class="heading">Bergen</h1>
+        <p class="subheading">Hier kannst du Geisternetze zur Bergung eintragen oder als verschollen melden.</p>
+
+        <div class="table-container">
+            <h:dataTable value="#{geisternetzBean.offeneGeisternetze}" var="netz" styleClass="ghostnet-table">
+                <h:column><f:facet name="header">Breitengrad</f:facet>#{netz.breitengrad}</h:column>
+                <h:column><f:facet name="header">Längengrad</f:facet>#{netz.laengengrad}</h:column>
+                <h:column><f:facet name="header">Beschreibung</f:facet>#{netz.beschreibung}</h:column>
+
+                <h:column>
+                    <f:facet name="header">Bergen</f:facet>
+                    <h:form styleClass="form-container">
+                        <h:outputLabel for="bergendePerson" value="Name:" />
+                        <h:inputText id="bergendePerson" value="#{geisternetzBean.geisternetz.bergendePerson}" required="true" styleClass="form-input"/>
+
+                        <h:outputLabel for="bergendeTelefon" value="Telefon:" />
+                        <h:inputText id="bergendeTelefon" value="#{geisternetzBean.geisternetz.bergendeTelefon}" required="true" styleClass="form-input"/>
+
+                        <h:commandButton value="Eintragen" action="#{geisternetzBean.eintragenFuerBergung(netz.id)}" styleClass="action-button"/>
+                    </h:form>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Verschollen</f:facet>
+                    <h:form styleClass="form-container">
+                        <h:outputLabel for="verschollenName" value="Name:" />
+                        <h:inputText id="verschollenName" value="#{geisternetzBean.geisternetz.verschollenName}" required="true" styleClass="form-input"/>
+
+                        <h:outputLabel for="verschollenTelefon" value="Telefon:" />
+                        <h:inputText id="verschollenTelefon" value="#{geisternetzBean.geisternetz.verschollenTelefon}" required="true" styleClass="form-input"/>
+
+                        <h:commandButton value="Verschollen melden" action="#{geisternetzBean.alsVerschollenMelden(netz.id)}" styleClass="action-button"/>
+                    </h:form>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Bergen</f:facet>
+                    <h:form>
+                        <h:commandButton value="Bergen" action="#{geisternetzBean.bergen(netz.id)}" styleClass="action-button action-button-green"/>
+                    </h:form>
+                </h:column>
+
+            </h:dataTable>
+        </div>
+    </div>
+</h:body>
+</html>

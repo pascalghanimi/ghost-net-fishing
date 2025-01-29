@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+/* Allgemeines Styling */
+body {
+  background: black;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.nav-container {
+  margin-top: 30px;
+  margin-left: 30px;
+  display: flex;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.nav-active {
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #ebebeb;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #FFD700;
+}
+
+/* Hauptcontainer */
+.main-container {
+    width: 50%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+/* Überschrift */
+.page-title {
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+/* Formular Styling */
+.form-box {
+    width: 100%;
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Eingabefelder */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+}
+
+/* Input-Felder */
+.form-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Fokus-Effekte */
+.form-field:focus {
+    outline: none;
+    border-color: #FFD700;
+    box-shadow: 0 0 5px #FFD700;
+}
+
+/* Button Styling */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #00CC00;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #00CC88;
+}
